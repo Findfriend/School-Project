@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nascar Image Generator</title>
+   
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #generator {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #666666;
+        }
+        th {
+            background-color: #444444;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 8px;
+            border: 1px solid #888888;
+            border-radius: 5px;
+            background-color: #222222;
+            color: #ffffff;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nascar Image Generator</h1>
+
+    <div id="generator">
+        <form action="/generate" method="post">
+            <table>
+                <tr>
+                    <th>Condition</th>
+                    <th>Value (Min - Max)</th>
+                </tr>
+                <tr>
+                    <td>Mean Red:</td>
+                    <td><input type="number" name="mean_red" min="0" max="255" placeholder="0 - 255" required></td>
+                </tr>
+                <tr>
+                    <td>Mean Green:</td>
+                    <td><input type="number" name="mean_green" min="0" max="255" placeholder="0 - 255" required></td>
+                </tr>
+                <tr>
+                    <td>Mean Blue:</td>
+                    <td><input type="number" name="mean_blue" min="0" max="255" placeholder="0 - 255" required></td>
+                </tr>
+                <tr>
+                    <td>Texture Standard Deviation:</td>
+                    <td><input type="number" name="texture_std" min="0" max="100" placeholder="0 - 100" required></td>
+                </tr>
+                <tr>
+                    <td>Laplacian Variance:</td>
+                    <td><input type="number" name="laplacian_variance" min="300" max="28000" placeholder="300 - 28000" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="Generate Image">
+        </form>
+    </div>
+</body>
+</html>
